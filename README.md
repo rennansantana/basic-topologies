@@ -113,13 +113,14 @@ encapsulation dot1Q 10
 ip address 192.168.10.2 255.255.255.0  
 exit  
 
-interface "interface-ID".20  
+interface "interface-ID".20
 description DADOS  
 encapsulation dot1Q 20  
 ip address 192.168.20.2 255.255.255.0  
 exit  
 
-! Configuração DHCP para VLAN 20  
+! Configuração DHCP para VLAN 20
+
 ip dhcp excluded-address 192.168.20.1 192.168.20.10  
 ip dhcp pool DADOS  
 network 192.168.20.0 255.255.255.0  
@@ -128,7 +129,8 @@ dns-server 8.8.8.8
 end  
 wr  
 
-! Configuração DHCP para VLAN 10  
+! Configuração DHCP para VLAN 10
+
 ip dhcp excluded-address 192.168.10.1 192.168.10.10  
 ip dhcp pool GERENCIA  
 network 192.168.10.0 255.255.255.0  
@@ -137,7 +139,8 @@ dns-server 8.8.8.8
 end  
 wr  
 
-! Configuração de interface serial  
+! Configuração de interface serial
+ 
 interface serial "serial-ID"  
 ip address 200.0.0.1 255.255.255.252  
 no shut  
