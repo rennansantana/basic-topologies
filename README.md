@@ -69,7 +69,7 @@ A topologia **router-on-a-stick** (roteador em um bastão) é uma arquitetura de
 
 ## Configuração do Switch  
 
-enable
+enable\
 conf t
 hostname S1
 
