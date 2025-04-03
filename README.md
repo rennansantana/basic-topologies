@@ -73,25 +73,25 @@ enable
 conf t  
 hostname S1  
 
-vlan 10
-name "GERENCIA"
-no shut
+vlan 10  
+name "GERENCIA"  
+no shut  
 
-vlan 20
-name "DADOS"
-no shut
-exit
+vlan 20  
+name "DADOS"  
+no shut  
+exit  
 
-interface "interface-ID"
-switchport trunk encapsulation dot1q
-switchport mode trunk
-no shut
+interface "interface-ID"  
+switchport trunk encapsulation dot1q  
+switchport mode trunk  
+no shut  
 
-interface fast0/1
-switchport mode access
-switchport access vlan 20
-no shut
-exit
+interface fast0/1  
+switchport mode access  
+switchport access vlan 20  
+no shut  
+exit  
 
 > **Nota**: O switch opera na camada 2, funcionando como ponte para encaminhar pacotes.
 
@@ -99,50 +99,50 @@ exit
 
 ## Configuração do Roteador  
 
-enable
-conf t
-hostname R1
+enable  
+conf t  
+hostname R1  
 
-interface "interface-ID"
-no shut
-exit
+interface "interface-ID"  
+no shut  
+exit  
 
-interface "interface-ID".10
-description TRUNK_S1
-encapsulation dot1Q 10
-ip address 192.168.10.2 255.255.255.0
-exit
+interface "interface-ID".10  
+description TRUNK_S1  
+encapsulation dot1Q 10  
+ip address 192.168.10.2 255.255.255.0  
+exit  
 
-interface "interface-ID".20
-description DADOS
-encapsulation dot1Q 20
-ip address 192.168.20.2 255.255.255.0
-exit
+interface "interface-ID".20  
+description DADOS  
+encapsulation dot1Q 20  
+ip address 192.168.20.2 255.255.255.0  
+exit  
 
-! Configuração DHCP para VLAN 20
-ip dhcp excluded-address 192.168.20.1 192.168.20.10
-ip dhcp pool DADOS
-network 192.168.20.0 255.255.255.0
-default-router 192.168.20.2
-dns-server 8.8.8.8
-end
-wr
+! Configuração DHCP para VLAN 20  
+ip dhcp excluded-address 192.168.20.1 192.168.20.10  
+ip dhcp pool DADOS  
+network 192.168.20.0 255.255.255.0  
+default-router 192.168.20.2  
+dns-server 8.8.8.8  
+end  
+wr  
 
-! Configuração DHCP para VLAN 10
-ip dhcp excluded-address 192.168.10.1 192.168.10.10
-ip dhcp pool GERENCIA
-network 192.168.10.0 255.255.255.0
-default-router 192.168.10.2
-dns-server 8.8.8.8
-end
-wr
+! Configuração DHCP para VLAN 10  
+ip dhcp excluded-address 192.168.10.1 192.168.10.10  
+ip dhcp pool GERENCIA  
+network 192.168.10.0 255.255.255.0  
+default-router 192.168.10.2  
+dns-server 8.8.8.8  
+end  
+wr  
 
-! Configuração de interface serial
-interface serial "serial-ID"
-ip address 200.0.0.1 255.255.255.252
-no shut
-end
-wr
+! Configuração de interface serial  
+interface serial "serial-ID"  
+ip address 200.0.0.1 255.255.255.252  
+no shut  
+end  
+wr  
 
 ---
 
