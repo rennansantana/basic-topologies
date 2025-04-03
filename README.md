@@ -73,6 +73,24 @@ enable
 conf t  
 hostname S1  
 
+!Configuração SSH
+
+ip domain-name "nome do dominio"  
+crypto key generate rsa
+>**Nota**: Quando solicitado, insira o tamanho da chave de cryptografia, a recomendação minima é 1024
+
+ip ssh version 2 
+>**Nota**: Caso o seu switch não suporte a versão dois ignore esse comando.
+
+username "nome de usuario" privilege 15 secret "senha"
+line vty 0 4
+>**Nota**: A quantidade de acessos simultaneos e uma escolha propria, a contagem é de 0 a 15 tendo ao todo 16 acessos possiveis.
+
+transport input ssh
+>**Nota**esse comando desativa o telnet, é o recomendado e mais utilizado, telnet não tem uma segurança fraca.
+
+wr 
+
 vlan 10  
 name "GERENCIA"  
 no shut  
