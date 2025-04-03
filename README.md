@@ -68,7 +68,7 @@ A topologia **router-on-a-stick** (roteador em um bastão) é uma arquitetura de
 ---
 
 ## Configuração do Switch  
-
+```
 enable  
 conf t  
 hostname S1  
@@ -92,13 +92,13 @@ switchport mode access
 switchport access vlan 20  
 no shut  
 exit  
-
+```
 > **Nota**: O switch opera na camada 2, funcionando como ponte para encaminhar pacotes.
 
 ---
 
 ## Configuração do Roteador  
-
+```
 enable  
 conf t  
 hostname R1  
@@ -146,7 +146,7 @@ ip address 200.0.0.1 255.255.255.252
 no shut  
 end  
 wr  
-
+```
 ---
 
 **Conclusão**: Essa configuração mantém a simplicidade operacional enquanto oferece roteamento básico entre VLANs, sendo uma solução econômica para cenários específicos. Para redes críticas ou de alto tráfego, recomenda-se switches de camada 3.
