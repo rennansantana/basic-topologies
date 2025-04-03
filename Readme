@@ -69,29 +69,29 @@ A topologia **router-on-a-stick** (roteador em um bastão) é uma arquitetura de
 
 ## Configuração do Switch  
 
-enbale 
-conf t
-hostname S1
+enbale<br>
+conf t<br>
+hostname S1<br>
 
-vlan 10
-name "GERENCIA"
-no shut
+vlan 10<br>
+name "GERENCIA"<br>
+no shut<br>
 
-vlan 20
-name "DADOS"
-no shut
-exit
+vlan 20<br>
+name "DADOS"<br>
+no shut<br>
+exit<br>
 
-interface "interface ID"
-switchport trunk encapsulation dot1q
-switchport mode trunk
-no shut
+interface "interface ID"<br>
+switchport trunk encapsulation dot1q<br>
+switchport mode trunk<br>
+no shut<br>
 
-interface fast0/1
-switchport mode access
-switchport access vlan 20
-no shut
-exit
+interface fast0/1<br>
+switchport mode access<br>
+switchport access vlan 20<br>
+no shut<br>
+exit<br>
 
 > **Nota**: O switch opera na camada 2, funcionando como ponte para encaminhar pacotes.  
 
