@@ -1,4 +1,4 @@
-# Topologia Router-on-a-Stick
+# Topologia Router-on-a-Stick.
 
 A topologia **router-on-a-stick** (roteador em um bastão) é uma arquitetura de rede que permite a comunicação entre **VLANs** (Redes Virtuais Locais) usando um único roteador físico com **sub-interfaces lógicas**. É uma solução econômica e simplificada para redes que necessitam de roteamento entre VLANs sem investir em switches de camada 3.
 
