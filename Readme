@@ -69,9 +69,9 @@ A topologia **router-on-a-stick** (roteador em um bastão) é uma arquitetura de
 
 ## Configuração do Switch  
 
-enbale<br>
-conf t<br>
-hostname S1<br>
+###enbale<br>  
+###conf t<br>
+###hostname S1<br>
 
 vlan 10<br>
 name "GERENCIA"<br>
