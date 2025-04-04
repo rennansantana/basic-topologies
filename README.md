@@ -87,17 +87,19 @@ transport input ssh
 end
 wr 
 
+en
+conf t
 vlan 10  
-name "GERENCIA"  
-no shut  
+name "GERENCIA"   
 
 vlan 20  
-name "DADOS"  
-no shut  
-exit  
+name "DADOS"    
+end
+wr
 
-interface "interface-ID"  
-switchport trunk encapsulation dot1q  
+en
+conf t
+interface "interface-ID"    
 switchport mode trunk  
 no shut  
 
@@ -120,6 +122,10 @@ hostname R1
 interface "interface-ID"  
 no shut  
 exit  
+
+interface GigabitEthernet "interface ID"
+no shut
+exit
 
 interface "interface-ID".10  
 description TRUNK_S1  
