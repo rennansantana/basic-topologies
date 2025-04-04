@@ -87,7 +87,7 @@ transport input ssh
 end
 wr 
 
-en
+enable
 conf t
 vlan 10  
 name "GERENCIA"   
@@ -97,7 +97,7 @@ name "DADOS"
 end
 wr
 
-en
+enable
 conf t
 interface "interface-ID"    
 switchport mode trunk  
